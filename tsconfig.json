@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "./packages",
+    "paths": {
+      "thromise": [
+        "./thromise/src/ts"
+      ],
+      "thromise/*": [
+        "./thromise/src/ts/*"
+      ]
+    }
+  }
+}
