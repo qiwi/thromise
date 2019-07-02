@@ -2,7 +2,7 @@
   "name": "thromise",
   "description": "Promise-looped data processor",
   "private": false,
-  "version": "1.0.0",
+  "version": "0.0.0",
   "homepage": "https://github.com/qiwi/thromise#readme",
   "main": "target/es5/index.js",
   "types": "target/es5/index.d.ts",
