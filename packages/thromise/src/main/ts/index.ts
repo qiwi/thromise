@@ -1,7 +1,9 @@
 
-type IAnyObject = {
+export type IAnyObject = {
   [key: string]: any
 }
+
+export type IHandler = (target: IAnyObject, name: string) => Promise<any> | Thromise<any> | undefined | string
 
 export class Throxy {
 
@@ -9,7 +11,7 @@ export class Throxy {
   target: IAnyObject
   [key: string]: any
 
-  constructor(target: IAnyObject) {
+  constructor(target: IAnyObject, handler: IHandler) {
 
     const proxy: any = new Proxy(target, {
       get(target, name: any) {
@@ -18,8 +20,7 @@ export class Throxy {
         }
 
         Throxy.log('get', 'name=', name)
-
-        return proxy
+        return handler(target, name)
       },
     })
 

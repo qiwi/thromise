@@ -1,4 +1,4 @@
-import {Throxy} from '../../main/ts'
+import {IAnyObject, IHandler, Throxy} from '../../main/ts'
 
 describe('Throxy', () => {
   it('exposes proper default export', () => {
@@ -8,7 +8,18 @@ describe('Throxy', () => {
   const target = {
     foo: 'bar',
   }
-  const throxy = new Throxy(target)
+  const handler: IHandler = (target: IAnyObject, name: string) => {
+
+    if (name === 'bar') {
+      return new Promise(resolve => {
+        resolve('BAR')
+      })
+       .then(data => {
+         target[name] = data
+       })
+    }
+  }
+  const throxy = new Throxy(target, handler)
 
   describe('constructor', () => {
     it('return proper instance', () => {
@@ -23,9 +34,19 @@ describe('Throxy', () => {
         expect(throxy.proxy.foo).toBe(target.foo)
       })
 
-      it('returns proxy otherwise', () => {
-        expect(throxy.proxy.bar).toBe(throxy.proxy)
-        expect(throxy.proxy.bar.baz).toBe(throxy.proxy)
+      it('returns Thromise if value would be obtained by handler', done => {
+        console.log(throxy.proxy.bar)
+
+        expect(throxy.proxy.bar).toBeInstanceOf(Promise)
+
+        throxy.proxy.bar.then(() => {
+          expect(throxy.proxy.bar).toBe('BAR')
+          done()
+        })
+      })
+
+      it('returns undefined otherwise', () => {
+        expect(throxy.proxy.baz).toBeUndefined()
       })
     })
   })
