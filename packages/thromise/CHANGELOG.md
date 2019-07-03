@@ -1,3 +1,10 @@
+# [thromise-v1.1.0](https://github.com/qiwi/thromise/compare/v1.0.0...v1.1.0) (2019-07-03)
+
+
+### Features
+
+* **Throxy:** add async field resolution ([145155d](https://github.com/qiwi/thromise/commit/145155d))
+
 # thromise-v1.0.0 (2019-07-02)
 
 
