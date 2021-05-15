@@ -48,7 +48,7 @@
     "jest": "24.8.0",
     "lerna": "^3.15.0",
     "parcel": "1.12.3",
-    "parcel-bundler": "^1.12.3",
+    "parcel-bundler": "1.12.5",
     "semantic-release": "15.13.18",
     "semantic-release-monorepo": "6.1.1",
     "semantic-release-monorepo-hooks": "2.9.4",
