@@ -35,7 +35,7 @@
   "homepage": "https://github.com/qiwi/thromise#readme",
   "dependencies": {},
   "devDependencies": {
-    "c8": "^7.14.0",
+    "c8": "^8.0.0",
     "concurrently": "^8.1.0",
     "eslint": "^8.41.0",
     "eslint-config-qiwi": "^2.1.3"
