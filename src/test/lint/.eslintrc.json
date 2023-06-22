@@ -1,0 +1,8 @@
+{
+  "extends": ["eslint-config-qiwi"],
+  "rules": {
+    "unicorn/consistent-destructuring": "off",
+    "unicorn/no-object-as-default-parameter": "off",
+    "unicorn/consistent-function-scoping": "off"
+  }
+}
