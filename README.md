@@ -1,5 +1,8 @@
 # thromise
 
+[![CI](https://github.com/qiwi/thromise/actions/workflows/ci.yaml/badge.svg?branch=master)](https://github.com/qiwi/thromise/actions/workflows/ci.yaml)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/b83e72f80c78f6ad1d8c/test_coverage)](https://codeclimate.com/github/qiwi/thromise/test_coverage)
+
 ## Problem*
 
 The Ugly.
