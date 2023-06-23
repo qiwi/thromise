@@ -4,8 +4,8 @@ const isPromiseLike = v => isFn(v?.then) && isFn(v?.catch)
 
 const marker = Symbol('thromise')
 
-const _loop = (cb, ctx = {stack: [], fns: new WeakMap(), pos: 0}) => {
-  const {stack, fns} = ctx
+const _loop = (cb, ctx) => {
+  const {stack, fns, resolve, reject} = ctx
   const thromisify = (fn) => {
     if (!isFn(fn)) {
       return fn
@@ -37,20 +37,27 @@ const _loop = (cb, ctx = {stack: [], fns: new WeakMap(), pos: 0}) => {
   const t = (...args) => args.length > 1 ? args.map(thromisify) : thromisify(args[0])
 
   try {
-    cb(t)
+    resolve(cb(t))
     stack.length = 0
   } catch (e) {
     if (e?.marker === marker) {
-      e.result.then((r) => {
-        stack.push(r)
-        ctx.pos = 0
-        _loop(cb, ctx)
-      })
+      e.result
+        .then((r) => {
+          stack.push(r)
+          ctx.pos = 0
+          _loop(cb, ctx)
+        })
+        .catch(reject)
+      return
     }
+
+    reject(e)
   }
 }
 
-const loop = (fn) => _loop(fn)
+const loop = (fn) => new Promise((resolve, reject) => {
+  _loop(fn, {stack: [], fns: new WeakMap(), pos: 0, resolve, reject})
+})
 
 module.exports = {
   loop
