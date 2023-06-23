@@ -1,3 +1,8 @@
+## [1.5.1](https://github.com/qiwi/thromise/compare/v1.5.0...v1.5.1) (2023-06-23)
+
+### Fixes & improvements
+* docs: update descriptions ([2b72ade](https://github.com/qiwi/thromise/commit/2b72adeaede0283f01362936c59b51b8d90ecaed))
+
 ## [1.5.0](https://github.com/qiwi/thromise/compare/v1.4.2...v1.5.0) (2023-06-23)
 
 ### Features
