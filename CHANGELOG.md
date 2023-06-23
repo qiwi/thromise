@@ -1,3 +1,8 @@
+## [1.5.0](https://github.com/qiwi/thromise/compare/v1.4.2...v1.5.0) (2023-06-23)
+
+### Features
+* feat: let loop `cb` be async ([f6b00b7](https://github.com/qiwi/thromise/commit/f6b00b77b62fd86ad03a2f4f257812cfc9043ba0))
+
 ## [1.4.2](https://github.com/qiwi/thromise/compare/v1.4.1...v1.4.2) (2023-06-23)
 
 ### Fixes & improvements
