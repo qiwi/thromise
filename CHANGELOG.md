@@ -1,3 +1,8 @@
+## [1.3.2](https://github.com/qiwi/thromise/compare/v1.3.1...v1.3.2) (2023-06-23)
+
+### Fixes & improvements
+* docs: update example ([c193675](https://github.com/qiwi/thromise/commit/c193675b00492d3c085a01adbceb4152acc367af))
+
 ## [1.3.1](https://github.com/qiwi/thromise/compare/v1.3.0...v1.3.1) (2023-06-23)
 
 ### Fixes & improvements
