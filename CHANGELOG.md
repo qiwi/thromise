@@ -1,3 +1,8 @@
+## [1.4.2](https://github.com/qiwi/thromise/compare/v1.4.1...v1.4.2) (2023-06-23)
+
+### Fixes & improvements
+* docs: fix usage example ([e9634ee](https://github.com/qiwi/thromise/commit/e9634eef3b3605a7e3b440faeb10a79701aaf190))
+
 ## [1.4.1](https://github.com/qiwi/thromise/compare/v1.4.0...v1.4.1) (2023-06-23)
 
 ### Fixes & improvements

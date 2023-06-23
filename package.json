@@ -1,6 +1,6 @@
 {
   "name": "thromise",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Promise-looped processor",
   "type": "module",
   "main": "src/main/js/index.cjs",
