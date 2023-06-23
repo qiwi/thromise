@@ -79,4 +79,19 @@ describe('thromise', () => {
 
     assert.equal(result, 'foo,qux,quxx,bar,baz')
   })
+
+  it('accepts async callback', async () => {
+    const a = v => new Promise(resolve => setTimeout(() => resolve(v), Math.random() * 1000))
+    const b = v => v
+
+    const result = await loop(async (_a, _b) => [
+      _a('foo'),
+      _b('qux'),
+      b('quxx'),
+      await a('bar'),
+      a('baz'),
+    ].join(','), a, b)
+
+    assert.equal(result, 'foo,qux,quxx,bar,[object Promise]')
+  })
 })

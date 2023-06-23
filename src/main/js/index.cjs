@@ -34,12 +34,12 @@ const thromisify = (fn, ctx) => {
   return _fn
 }
 
-const _loop = (cb, ctx) => {
+const _loop = async (cb, ctx) => {
   const {stack, rest, resolve, reject} = ctx
   const t = (...args) => args.length > 1 ? args.map(fn => thromisify(fn, ctx)) : thromisify(args[0], ctx)
 
   try {
-    resolve(cb(...rest, t))
+    resolve(await cb(...rest, t))
     stack.length = 0
   } catch (e) {
     if (e?.marker === marker) {

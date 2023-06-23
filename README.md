@@ -36,7 +36,7 @@ import { loop } from 'thromise'
 const a = v => new Promise(resolve => setTimeout(() => resolve(v), Math.random() * 1000))
 const b = v => v
 
-loop(t => {
+await loop(t => {
   const [_a, _b] = t(a, b)
 
   console.log(
@@ -46,6 +46,8 @@ loop(t => {
     _a('bar'),
     _a('baz'),
   )
+  
+  return 'result'
 })
 
 // or even a bit shorter:
