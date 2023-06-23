@@ -36,7 +36,7 @@ import { loop } from 'thromise'
 const a = v => new Promise(resolve => setTimeout(() => resolve(v), Math.random() * 1000))
 const b = v => v
 
-loop(t => {
+loop((a, b) => {
   const [_a, _b] = t(a, b)
 
   console.log(
@@ -47,6 +47,18 @@ loop(t => {
     _a('baz'),
   )
 })
+
+// or a bit shorter:
+
+loop((a, b) => {
+  console.log(
+    'Looks synchronous:',
+    _a('foo'),
+    _b('quz'),
+    _a('bar'),
+    _a('baz'),
+  )
+}, a, b)
 ```
 
 ## License

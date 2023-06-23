@@ -64,4 +64,19 @@ describe('thromise', () => {
       assert.ok(['quxx', 'baz'].includes(e))
     }
   })
+
+  it('thromisifies rest fns if passed', async () => {
+    const a = v => new Promise(resolve => setTimeout(() => resolve(v), Math.random() * 1000))
+    const b = v => v
+
+    const result = await loop((a, b) => [
+      a('foo'),
+      b('qux'),
+      b('quxx'),
+      a('bar'),
+      a('baz'),
+    ].join(','), a, b)
+
+    assert.equal(result, 'foo,qux,quxx,bar,baz')
+  })
 })

@@ -1,3 +1,5 @@
-type C = (t: (fn: Function) => Function) => any
+type Fn = (...args: any) => any
 
-declare function loop<R extends C = C>(cb: C): Promise<ReturnType<R>>
+type C = (t: (fn: Fn) => Fn) => any
+
+declare function loop<R extends Fn = C>(cb: C, ...rest: Fn[]): Promise<ReturnType<R>>

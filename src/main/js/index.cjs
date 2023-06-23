@@ -35,11 +35,11 @@ const thromisify = (fn, ctx) => {
 }
 
 const _loop = (cb, ctx) => {
-  const {stack, resolve, reject} = ctx
+  const {stack, rest, resolve, reject} = ctx
   const t = (...args) => args.length > 1 ? args.map(fn => thromisify(fn, ctx)) : thromisify(args[0], ctx)
 
   try {
-    resolve(cb(t))
+    resolve(cb(...rest, t))
     stack.length = 0
   } catch (e) {
     if (e?.marker === marker) {
@@ -57,9 +57,12 @@ const _loop = (cb, ctx) => {
   }
 }
 
-const loop = cb => new Promise((resolve, reject) =>
-  _loop(cb, {stack: [], fns: new WeakMap(), pos: 0, resolve, reject})
-)
+const loop = (cb, ...rest) => new Promise((resolve, reject) => {
+  const ctx = {stack: [], fns: new WeakMap(), pos: 0, resolve, reject}
+  ctx.rest = rest.map(fn => thromisify(fn, ctx))
+
+  _loop(cb, ctx)
+})
 
 module.exports = {
   loop
