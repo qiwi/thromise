@@ -53,10 +53,10 @@ loop(t => {
 loop((a, b) => {
   console.log(
     'Looks synchronous:',
-    _a('foo'),
-    _b('quz'),
-    _a('bar'),
-    _a('baz'),
+    a('foo'),
+    b('quz'),
+    a('bar'),
+    a('baz'),
   )
 }, a, b)
 ```
