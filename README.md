@@ -33,13 +33,14 @@ yarn add thromise
 ```js
 import { loop } from 'thromise'
 
-const a = (v) => new Promise(resolve => setTimeout(() => resolve(v), Math.random() * 1000))
+const a = v => new Promise(resolve => setTimeout(() => resolve(v), Math.random() * 1000))
 const b = v => v
 
-loop((t) => {
+loop(t => {
   const [_a, _b] = t(a, b)
 
   console.log(
+    'Looks synchronous:',
     _a('foo'),
     _b('quz'),
     _a('bar'),
