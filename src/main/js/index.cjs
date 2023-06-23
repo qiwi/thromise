@@ -6,7 +6,7 @@ const marker = Symbol('thromise')
 
 const _loop = (cb, ctx) => {
   const {stack, fns, resolve, reject} = ctx
-  const thromisify = (fn) => {
+  const thromisify = fn => {
     if (!isFn(fn)) {
       return fn
     }
@@ -42,7 +42,7 @@ const _loop = (cb, ctx) => {
   } catch (e) {
     if (e?.marker === marker) {
       e.result
-        .then((r) => {
+        .then(r => {
           stack.push(r)
           ctx.pos = 0
           _loop(cb, ctx)
@@ -55,9 +55,9 @@ const _loop = (cb, ctx) => {
   }
 }
 
-const loop = (fn) => new Promise((resolve, reject) => {
+const loop = fn => new Promise((resolve, reject) =>
   _loop(fn, {stack: [], fns: new WeakMap(), pos: 0, resolve, reject})
-})
+)
 
 module.exports = {
   loop

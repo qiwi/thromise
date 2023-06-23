@@ -1,1 +1,3 @@
-declare function loop(cb: (t: (fn: Function) => Function) => void): void
+type C = (t: (fn: Function) => Function) => any
+
+declare function loop<R extends C = C>(cb: C): Promise<ReturnType<R>>
