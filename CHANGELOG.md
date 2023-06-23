@@ -1,3 +1,8 @@
+## [1.3.1](https://github.com/qiwi/thromise/compare/v1.3.0...v1.3.1) (2023-06-23)
+
+### Fixes & improvements
+* perf: update typings ([302108a](https://github.com/qiwi/thromise/commit/302108aec96e4d67c8f76125629f87cf50f9fbcf))
+
 ## [1.3.0](https://github.com/qiwi/thromise/compare/v1.2.0...v1.3.0) (2023-06-23)
 
 ### Features
