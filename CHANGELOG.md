@@ -1,3 +1,8 @@
+## [1.4.0](https://github.com/qiwi/thromise/compare/v1.3.3...v1.4.0) (2023-06-23)
+
+### Features
+* feat: apply thromisify for loop rest params if passed ([4200080](https://github.com/qiwi/thromise/commit/4200080e56272e19e984d5a0687f978ecf846d6c))
+
 ## [1.3.3](https://github.com/qiwi/thromise/compare/v1.3.2...v1.3.3) (2023-06-23)
 
 ### Fixes & improvements
