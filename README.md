@@ -18,12 +18,8 @@ const b = await fn(a, 'bar')
 
 The good.
 ```js
-loop(t => {
-  const f = t(fn)
-  
-  const a = f('foo')
-  const b = f(a, 'bar')
-})
+const a = fn('foo')
+const b = fn(a, 'bar')
 ```
  
 _This is just our in-joke in the context of the Java vs JavaScript holywar_
