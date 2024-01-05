@@ -13,7 +13,7 @@
     }
   },
   "module": "./src/main/js/index.mjs",
-  "types": "target/dts/index.d.ts",
+  "types": "./src/main/js/index.d.ts",
   "files": [
     "src/main"
   ],
@@ -22,7 +22,8 @@
     "test": "concurrently 'npm:test:*'",
     "test:lint": "eslint -c src/test/lint/.eslintrc.json --ext .mjs,.cjs src",
     "test:unit": "c8 -r lcov -r text -o target/coverage -x src/test node --test-reporter=spec --experimental-specifier-resolution=node src/test/js/index.test.mjs",
-    "test:it": "node --test-reporter=spec --experimental-specifier-resolution=node src/test/js/index.it.test.mjs"
+    "test:it": "node --test-reporter=spec --experimental-specifier-resolution=node src/test/js/index.it.test.mjs",
+    "test:dts": "tsd -f src/test/dts/index.test-d.ts"
   },
   "repository": {
     "type": "git",
@@ -39,7 +40,8 @@
     "c8": "^9.0.0",
     "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
-    "eslint-config-qiwi": "^2.1.3"
+    "eslint-config-qiwi": "^2.1.3",
+    "tsd": "^0.30.3"
   },
   "keywords": [
     "thromise",
