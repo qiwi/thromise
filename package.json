@@ -21,7 +21,8 @@
     "build": "exit 0",
     "test": "concurrently 'npm:test:*'",
     "test:lint": "eslint -c src/test/lint/.eslintrc.json --ext .mjs,.cjs src",
-    "test:unit": "c8 -r lcov -r text -o target/coverage -x src/test node --test-reporter=spec --experimental-specifier-resolution=node src/test/js/index.test.mjs"
+    "test:unit": "c8 -r lcov -r text -o target/coverage -x src/test node --test-reporter=spec --experimental-specifier-resolution=node src/test/js/index.test.mjs",
+    "test:it": "node --test-reporter=spec --experimental-specifier-resolution=node src/test/js/index.it.test.mjs"
   },
   "repository": {
     "type": "git",
