@@ -1,3 +1,8 @@
+## [1.5.2](https://github.com/qiwi/thromise/compare/v1.5.1...v1.5.2) (2024-01-05)
+
+### Fixes & improvements
+* fix: fix typings ref, add tds tests ([577a868](https://github.com/qiwi/thromise/commit/577a868ca4e69f709c44ef3aa87d2c4e2390ae29))
+
 ## [1.5.1](https://github.com/qiwi/thromise/compare/v1.5.0...v1.5.1) (2023-06-23)
 
 ### Fixes & improvements
