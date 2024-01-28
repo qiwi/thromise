@@ -63,5 +63,7 @@ loop((a, b) => {
 }, a, b)
 ```
 
+See also [synchronized-promise](https://github.com/Yukaii/synchronized-promise).
+
 ## License
 [MIT](./LICENSE)
